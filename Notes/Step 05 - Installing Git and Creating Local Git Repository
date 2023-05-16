@@ -1,0 +1,22 @@
+Install Git client.
+C:\Users\Nishtha\Desktop\Spring\microservices>mkdir git-localconfig-repo
+
+Make sure no space in path.
+
+Open it in visual studio code.
+
+Initialize empty git repository
+
+Create limit.service.properties file here
+
+Add limits-service.minimum=20
+    limits-service.maximum=99
+
+    from application.properties file from limit service
+
+Do git commit.
+
+So right now we have our limits service, the spring cloud config server,
+git repository, individually present.
+
+In the subsequent step, lets see how to connect all of them.
