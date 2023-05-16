@@ -1,0 +1,20 @@
+Creating a Limit Service
+
+1. Created a maven project
+2. Added Spring Web- provide tomcat server, spring development tool , spring boot actuator, spring cloud config cloud
+in our project
+
+Whenever we add spring cloud starter config in our project, we need to configure how spring cloud starter config needs
+to connect to spring cloud config server.Ans also configure the URL.
+
+spring.config.import = configserver::http://localhost:8888
+
+Right now our config server is not running, so we will say optional configserver.
+spring.config.import=optional:configserver::http://localhost:8888
+
+Once the config server is available at a later step,the limit service would automatically talk to the
+config server.
+
+In recent version we need to configure this, earlier it was not required.
+
+
