@@ -1,0 +1,9 @@
+ -> pick up the values from application dot properties and return them back in this specific controller.
+ -> For this, we need to create a Configuration class, which matches structure in application.properties,
+    Limit service is the name of the microservice and the minimum, maximum are the configuration values
+    which we are storing in application.properties file.
+
+ -> Add @ConfigurationProperties to map the value from application.properties file to Configuration Class.
+
+ Thus we have enhanced our Limit service to get the properties from a property file. In the subsequent steps,
+  we would want to connect our limit service to a centralized configuration server.
