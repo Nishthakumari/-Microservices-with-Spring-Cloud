@@ -1,0 +1,15 @@
+Setting up Currency Exchange Microservice
+
+On Spring Initializr, choose:
+
+Group Id: com.in28minutes.microservices
+Artifact Id: currency-exchange-service
+Dependencies
+Web
+DevTools
+Actuator
+Config Client
+
+/currency-exchange-service/src/main/resources/application.properties Modified
+spring.application.name=currency-exchange
+server.port=8000
