@@ -1,0 +1,8 @@
+Connect Spring Cloud config server to the git repository.
+
+If you had any problems with getting this URL working, the first thing that you'd want to check
+is to make sure that limit service, the name of this is matching the name of the file in here,
+limits-service and make sure that this is default. And make sure that the port is 8888.
+This is the same port that we are launching our Spring Cloud config server on.
+
+So if you go to the application.properties of Spring Cloud config server, the port name is 8888.
