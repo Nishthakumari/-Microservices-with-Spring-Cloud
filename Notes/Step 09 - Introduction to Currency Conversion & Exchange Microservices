@@ -1,0 +1,20 @@
+Two microservice:
+currency exchange microservice - what is the exchange rate of one currency in another?
+
+From the currency exchange microservice, we would be exposing a simple URL.
+
+/currency-exchange/from/USD/to/INR.
+
+What is the currency exchange rate of converting USD to INR?
+
+And the service, the currency exchange microservice would return back the conversion multiple saying
+One USD is 65 INR.
+
+currency conversion microservice -  responsible for converting 10 USD into INR.
+
+For the currency conversion microservice to provide its features, what it would do
+is it would call the currency exchange microservice and ask "What is the value of USD in INR today?"
+And then it would take the return value, that would be 65 and it would take it, multiply it with 10
+and it would return this response back.
+
+Let's start with the currency exchange microservice
