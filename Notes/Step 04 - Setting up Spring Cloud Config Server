@@ -1,0 +1,18 @@
+In the previous steps, we set up the limits service.
+In this step, we set up the Spring Cloud Config server and connect it to a Git repository.
+
+Create  new spring project using spring-cloud-config-server
+
+Dependency:
+Dev tools
+config server --> Central management for configuration via git.
+
+
+spring-cloud-config-server/src/main/resources/application.properties.
+here we're configuring server.port is equal to 8888, then only application will run.
+
+We have just launched up Spring Cloud Config server.
+
+There is one more annotation we need to add to it to make it a real config server.
+
+Next step, create the GitHub repository, and integrate all these three together.
