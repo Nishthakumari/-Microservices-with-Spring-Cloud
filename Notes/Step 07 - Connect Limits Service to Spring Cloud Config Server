@@ -1,0 +1,19 @@
+In the previous step, we connected our spring cloud conflict server to the gate repository.
+And in this step let's connect our Limits Microservice to the Spring Cloud Config Server.
+This would complete the entire chain.
+
+We need to configure two important things in limit microservice
+
+1. First thing we have already configured, adding config client in pom.xml , which says that it wants to talk to
+configserver and url of configserver is defined in its application.properties.
+
+2. what is the name of this application? What configuration in the Cloud Config Server
+should this application make use of?
+spring.application.name=limits-service, add this in application properties file of config server. This will
+act as ID for talking to config server.
+
+
+One thing we already saw is the values in the application.properties have less priority compared to
+the values which are present in your gate repository.
+
+
