@@ -1,0 +1,61 @@
+In the earlier step, we connected limits service to the spring cloud config server
+and the configuration is stored in a GitHub repository.
+
+Let's say there are multiple environments for the limits service, a DEV environment, a QA, a stage
+and a production environment. How do you store separate configuration for limits service
+for these four environments, and how do you make use of it from this spring cloud config server?
+
+The first thing that we'll start with is how do you store configuration related to multiple environments
+in a GitHub repository.
+
+Earlier, we created the limits-service.properties in the Git local config repo.
+What I'll do now is actually create multiple copies of it,
+
+limits-service-dev,
+
+limits-service-qa.
+
+This is how you can actually create property files for different environments.
+
+
+
+
+Now, we'd want to pick these values from the config server. How does the URL look like?
+Earlier, this was the URL that we made use of,
+localhost:8888/limits-service/default.
+Now, if I would want to actually pick up the configuration related to dev, I can say /dev.
+And you can see that this would return the values from dev.
+This would also return the default limits-service.properties file,
+but the values which are configured in limits-service-dev will have higher priority than the values
+which are configured in limits-service.properties.
+Similarly, you can actually say over here, qa. So now we have values for multiple environments picked up
+from the GitHub repository.
+
+How do we make the application take the values from the spring cloud config server?
+
+The way you can do that is by actually going and configuring a few things in the application.properties
+of your limits service.
+
+first is setting profile: spring.profiles.active=qa in limit service
+
+Spring.cloud.config.name can be set in appl file of limit service, to give which file to use for fetching from github.
+
+
+The last thing that we would want talk about is how do you configure it for other microservices?
+
+Let's say I would want to configure the properties for microservice X, microservice Y.
+
+How do I do that?
+
+define microservice-x.properties
+define microservice-y.properties in gitrepository
+
+The biggest advantage of going with this approach is now all your configuration related
+to your application is centralized,
+
+By separating out the configuration from your applications,
+
+you are making your operations easier.Your operations team can control all configuration related
+to all microservices for multiple environments in a single location.
+So whenever they would want to make a change in an application, they make a change in the GitHub repository
+commit it in, and that's it. Change is ready and distributed to multiple environments.
